@@ -1,4 +1,9 @@
+vim.cmd.colorscheme("catppuccin")
+
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.nu = true
+vim.opt.relativenumber = true
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

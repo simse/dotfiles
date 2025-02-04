@@ -1,13 +1,11 @@
 local which_key = require "which-key"
-local builtin = require('telescope.builtin')
+-- local builtin = require('telescope.builtin')
 
 local telescope_mappings = {
-  f = {
-    name = "Find",
-    f = { builtin.find_files, "Find files" },
-    g = { builtin.git_files, "Find git files" },
-    l = { builtin.live_grep, "Live grep" },
-  },
+  { "<leader>f", group = "Find" },
+  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+  { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find git files" },
+  { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
 }
 
-which_key.register(telescope_mappings, { prefix = "<leader>" })
+which_key.add(telescope_mappings, { prefix = "<leader>" })
