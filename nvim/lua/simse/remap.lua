@@ -28,6 +28,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     which_key.register(mappings, opts)
 
+    vim.keymap.set('n', '<leader>fu', ':lua require("telescope.builtin").lsp_references()<CR>',
+      { noremap = true, silent = true })
+
     -- vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
     -- vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
     -- vim.keymap.set('n', '<leader>vws', function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -51,10 +54,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local telescope_mappings = {
-  { "<leader>f", group = "Find" },
+  { "<leader>f",  group = "Find" },
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-  { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find git files" },
-  { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+  { "<leader>fg", "<cmd>Telescope git_files<cr>",  desc = "Find git files" },
+  { "<leader>fl", "<cmd>Telescope live_grep<cr>",  desc = "Live grep" },
 }
 
 which_key.add(telescope_mappings, { prefix = "<leader>" })
