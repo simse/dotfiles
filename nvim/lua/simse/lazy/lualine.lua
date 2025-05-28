@@ -3,7 +3,10 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     require("lualine").setup({
-      theme = "horizon"
+      theme = "horizon",
+      sections = {
+        lualine_x = { "overseer" },
+      },
     })
   end
 };

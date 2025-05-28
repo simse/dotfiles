@@ -27,6 +27,10 @@ return {
         "ts_ls",
         "lua_ls",
         "svelte",
+        "astro",
+        "tailwindcss",
+        "pyright",
+        "gopls",
       },
       handlers = {
         function(server_name)
@@ -79,6 +83,5 @@ return {
         end,
       },
     })
-
   end
 }
